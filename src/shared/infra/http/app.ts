@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
+import 'reflect-metadata';
 
 import { createServer, Server } from 'http';
 
