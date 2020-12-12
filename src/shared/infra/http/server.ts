@@ -5,6 +5,6 @@ const app = new App();
 
 dotenv.config();
 
-app.server.listen(process.env.PORT || 3333, () => {
+app.app.listen(process.env.PORT || 3333, () => {
     console.log('Server started on port 3333!');
 });

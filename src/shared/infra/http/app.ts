@@ -2,8 +2,6 @@ import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 import 'reflect-metadata';
 
-import { createServer, Server } from 'http';
-
 import routes from './routes';
 import AppError from '../../errors/AppError';
 
@@ -12,11 +10,8 @@ import '@shared/container';
 export default class App {
     public app: express.Application;
 
-    public server: Server;
-
     constructor() {
         this.app = express();
-        this.server = createServer(this.app);
         this.middlewares();
         this.routes();
         this.errors();
