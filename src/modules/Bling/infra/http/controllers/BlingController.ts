@@ -8,4 +8,10 @@ export default class BlingController {
         const data = await searchProducts.execute();
         return response.status(200).json(data);
     }
+
+    public async NewSale(resquest: Request, response: Response) {
+        // const searchProducts = container.resolve(SearchProductsService);
+        // const data = await searchProducts.execute();
+        return response.status(200).json();
+    }
 }
