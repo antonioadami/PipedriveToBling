@@ -28,8 +28,6 @@ export default class SendOrderService {
         </pedido>
         `;
 
-        console.log(xml);
-
         const data = await this.httpRequestsProvider.post(
             `${process.env.BLING_BASE_URL}/pedido/json/?apikey=${process.env.BLING_API_KEY}&xml=${xml}`,
 
