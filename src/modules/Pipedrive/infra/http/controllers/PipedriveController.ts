@@ -17,10 +17,6 @@ export default class PipedriveController {
             });
 
             Promise.all(orderPromises).then(order => {
-                console.log('-----------------------------');
-
-                console.log(order);
-
                 const mongoPromises = data.data.map(deal => {
                     return sendMongo.execute({
                         costumer_name: deal.user_id.name,
@@ -29,11 +25,9 @@ export default class PipedriveController {
                     });
                 });
 
-                console.log('-----------------------------');
-
-                console.log(mongoPromises);
-
-                response.status(200).json(order);
+                Promise.all(mongoPromises).then(() => {
+                    response.status(200).json(order);
+                });
             });
         }
     }

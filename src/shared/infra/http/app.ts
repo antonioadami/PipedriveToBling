@@ -1,6 +1,7 @@
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 import 'reflect-metadata';
+import '../mongoose';
 
 import routes from './routes';
 import AppError from '../../errors/AppError';

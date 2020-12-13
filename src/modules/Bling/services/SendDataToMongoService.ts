@@ -1,21 +1,21 @@
 import { inject, injectable } from 'tsyringe';
 import IOportinityDTO from '../dtos/IOportinityDTO';
-import Oportunity from '../infra/typeorm/schemas/Oportunity';
+import Opportunity from '../infra/typeorm/schemas/Opportunity';
 
-import IOportunitiesRepository from '../repositories/IOportunitiesRepository';
+import IOpportunitiesRepository from '../repositories/IOpportunitiesRepository';
 
 @injectable()
 export default class SendDataToMongoService {
     constructor(
-        @inject('IOportunitiesRepository')
-        private oportunitiesRepository: IOportunitiesRepository,
+        @inject('OpportunitiesRepository')
+        private opportunitiesRepository: IOpportunitiesRepository,
     ) {}
 
-    async execute(oportunityData: IOportinityDTO): Promise<Oportunity> {
-        const oportunity = await this.oportunitiesRepository.create(
-            oportunityData,
+    async execute(opportunityData: IOportinityDTO): Promise<Document> {
+        const opportunity = await this.opportunitiesRepository.create(
+            opportunityData,
         );
 
-        return oportunity;
+        return opportunity;
     }
 }
