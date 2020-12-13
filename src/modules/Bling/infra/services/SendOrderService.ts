@@ -9,7 +9,7 @@ export default class SendOrderService {
         private httpRequestsProvider: IHttpRequestsProvider,
     ) {}
 
-    async execute(costumerName: string): Promise<void> {
+    async execute(costumerName: string): Promise<any> {
         const xml = `
         <?xml version="1.0" encoding="UTF-8"?>
         <pedido>
@@ -18,6 +18,9 @@ export default class SendOrderService {
             </cliente>
         </pedido>
         `;
+
+        console.log(xml);
+
         const data = await this.httpRequestsProvider.post(
             `${process.env.BLING_BASE_URL}/pedido/json/?apikey=${process.env.BLING_API_KEY}&xml=${xml}`,
 
