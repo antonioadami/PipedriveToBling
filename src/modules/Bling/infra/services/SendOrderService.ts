@@ -16,6 +16,15 @@ export default class SendOrderService {
             <cliente>
                 <nome>${costumerName}</nome>
             </cliente>
+            <itens>
+                <item>
+                <codigo>001</codigo>
+                <descricao>Produto 001</descricao>
+                <un>Pç</un>
+                <qtde>10</qtde>
+                <vlr_unit>1.68</vlr_unit>
+                </item>
+            </itens>
         </pedido>
         `;
 
