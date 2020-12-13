@@ -18,8 +18,8 @@ export default class SendOrderService {
             </cliente>
             <itens>
                 <item>
-                <codigo>001</codigo>
-                <descricao>Produto 001</descricao>
+                <codigo>${Date.now()}</codigo>
+                <descricao>Produto</descricao>
                 <un>Pc</un>
                 <qtde>10</qtde>
                 <vlr_unit>1.68</vlr_unit>

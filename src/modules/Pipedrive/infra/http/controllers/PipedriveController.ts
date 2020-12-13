@@ -1,3 +1,4 @@
+import SendDataToMongoService from '@modules/Bling/services/SendDataToMongoService';
 import SendOrderService from '@modules/Bling/services/SendOrderService';
 import GetWonDealsService from '@modules/Pipedrive/services/GetWonDealsService';
 import { Request, Response } from 'express';
@@ -7,6 +8,7 @@ export default class PipedriveController {
     public async GetWonDeals(request: Request, response: Response) {
         const getWonDeals = container.resolve(GetWonDealsService);
         const sendOrder = container.resolve(SendOrderService);
+        const sendMongo = container.resolve(SendDataToMongoService);
         const data = await getWonDeals.execute();
 
         if (data.success) {
@@ -14,9 +16,25 @@ export default class PipedriveController {
                 return sendOrder.execute(deal.user_id.name);
             });
 
-            Promise.all(orderPromises).then(order =>
-                response.status(200).json(order),
-            );
+            Promise.all(orderPromises).then(order => {
+                console.log('-----------------------------');
+
+                console.log(order);
+
+                const mongoPromises = data.data.map(deal => {
+                    return sendMongo.execute({
+                        costumer_name: deal.user_id.name,
+                        date: new Date(),
+                        value: 2,
+                    });
+                });
+
+                console.log('-----------------------------');
+
+                console.log(mongoPromises);
+
+                response.status(200).json(order);
+            });
         }
     }
 }

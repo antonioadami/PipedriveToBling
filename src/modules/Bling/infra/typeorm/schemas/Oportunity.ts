@@ -12,7 +12,7 @@ class Oportunity {
     date: Date;
 
     @Column()
-    value: string;
+    value: number;
 }
 
 export default Oportunity;
