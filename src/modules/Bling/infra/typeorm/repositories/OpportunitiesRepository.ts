@@ -11,6 +11,12 @@ class OpportunitiesRepository implements IOpportunitiesRepository {
 
         return opportunity;
     }
+
+    public async list(): Promise<Document[]> {
+        const opportunities = await Opportunity.find();
+        console.log(opportunities);
+        return opportunities;
+    }
 }
 
 export default OpportunitiesRepository;
