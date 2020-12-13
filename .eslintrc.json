@@ -28,6 +28,7 @@
         ],
         "class-methods-use-this": "off",
         "no-useless-constructor": "off",
+        "camelcase": "off",
         "prettier/prettier": "error"
     },
     "settings": {

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
-import SearchProductsService from '../../services/SearchProductsService';
+import SearchProductsService from '../../../services/SearchProductsService';
 
 export default class BlingController {
     public async GetProducts(request: Request, response: Response) {

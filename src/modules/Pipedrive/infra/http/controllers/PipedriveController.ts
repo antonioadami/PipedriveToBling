@@ -1,4 +1,4 @@
-import SendOrderService from '@modules/Bling/infra/services/SendOrderService';
+import SendOrderService from '@modules/Bling/services/SendOrderService';
 import GetWonDealsService from '@modules/Pipedrive/services/GetWonDealsService';
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
