@@ -9,12 +9,10 @@ export default class GetWonDealsService {
     ) {}
 
     async execute(): Promise<void> {
-        console.log('service');
-
         const deals = await this.httpRequestsProvider.get(
             `${process.env.PIPEDRIVE_BASE_URL}/deals?status=won&start=0&api_token=${process.env.PIPEDRIVE_API_TOKEN}`,
         );
 
-        console.log(deals);
+        return deals;
     }
 }
