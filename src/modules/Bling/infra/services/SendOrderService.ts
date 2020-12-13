@@ -20,7 +20,7 @@ export default class SendOrderService {
                 <item>
                 <codigo>001</codigo>
                 <descricao>Produto 001</descricao>
-                <un>Pç</un>
+                <un>Pc</un>
                 <qtde>10</qtde>
                 <vlr_unit>1.68</vlr_unit>
                 </item>
