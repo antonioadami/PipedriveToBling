@@ -12,7 +12,7 @@ export default class BlingController {
     public async NewSale(request: Request, response: Response) {
         // const searchProducts = container.resolve(SearchProductsService);
         // const data = await searchProducts.execute();
-        console.log(request.body);
+        // console.log(request.body);
 
         return response.status(200).json();
     }

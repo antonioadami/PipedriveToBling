@@ -25,7 +25,7 @@ export default class PipedriveController {
                     });
                 });
 
-                Promise.all(mongoPromises).then(() => {
+                Promise.all(mongoPromises).then(teste => {
                     response.status(200).json(order);
                 });
             });

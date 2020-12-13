@@ -8,9 +8,6 @@ class OpportunitiesRepository implements IOpportunitiesRepository {
         const opportunity = new Opportunity(opportunityData);
 
         await opportunity.save();
-        const tes = opportunity.toObject();
-
-        console.log(tes);
 
         return opportunity;
     }
